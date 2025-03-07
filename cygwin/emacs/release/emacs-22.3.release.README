@@ -1,0 +1,74 @@
+The build of Emacs-22.3.release (GTK) with GCC-4.3.2 and Cygwin-1.5.25-15
+=========================================================================
+
+
+You can download the binaries as follow:
+
+wget -N http://www.webalice.it/angelo.graziosi/cygwin/emacs/release/pkg.1-emacs-22.3.release.tar.lzma
+
+wget -N http://www.webalice.it/angelo.graziosi/cygwin/emacs/release/pkg.2-emacs-22.3.release.tar.lzma
+
+wget -N http://www.webalice.it/angelo.graziosi/cygwin/emacs/release/pkg.3-emacs-22.3.release.tar.lzma
+
+wget -N http://www.webalice.it/angelo.graziosi/cygwin/emacs/release/pkg.4-emacs-22.3.release.tar.lzma
+
+
+(I have splitted a single tarball for disk quota reasons).
+
+
+To install (you need the tar package, version >= 1.19.90-1):
+
+   tar --lzma -xvf pkg.1-emacs-22.3.release.tar.lzma -C /
+   tar --lzma -xvf pkg.2-emacs-22.3.release.tar.lzma -C /
+   tar --lzma -xvf pkg.3-emacs-22.3.release.tar.lzma -C /
+   tar --lzma -xvf pkg.4-emacs-22.3.release.tar.lzma -C /
+
+   cd /usr/local/bin
+
+   ln -sf /usr/local/emacs/bin/emacs.exe emacs22
+
+
+(Or more quickly:
+
+   wget -N http://www.webalice.it/angelo.graziosi/cygwin/emacs/release/get_and_install-emacs-22.3.release.sh
+
+   chmod +x get_and_install-emacs-22.3.release.sh
+
+   ./get_and_install-emacs-22.3.release.sh
+)
+
+
+To start (from an X-shell)
+
+   $ G_SLICE=always-malloc emacs22 &
+
+You NEED to add 'G_SLICE=always-malloc' or it will fail with an error message like this:
+
+'***MEMORY-ERROR***: emacs[2328]: GSlice: failed to allocate 504 bytes (alignment: 512): Function not implemented'
+
+
+At least the following libraries are requested (+ X packages):
+
+  - gtk2-x11-runtime
+  - libjpeg62
+  - libncurses8
+  - libpng12
+  - libtiff5
+  - libungif4
+  - libXft2
+
+
+
+
+DISCLAIMER:
+
+   I TAKE NO RESPONSIBILITY FOR ANY LOSS OF DATA ARISING FROM THE
+   USE OF THIS SOFTWARE, HOWSOEVER CAUSED.
+
+   THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT
+   WILL BE USEFUL BUT WITHOUT ANY WARRANTY.  ALL WARRANTIES, EXPRESSED OR
+   IMPLIED ARE HEREBY DISCLAIMED.
+
+   THIS INCLUDES BUT IS NOT LIMITED TO WARRANTIES OF MERCHANTABILITY OR
+   FITNESS FOR A PARTICULAR PURPOSE.
+

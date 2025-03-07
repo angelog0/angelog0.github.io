@@ -1,0 +1,62 @@
+The build of CERNLIB-2006 x86_64 on Mac OSX Lion and MacPorts Tools
+===================================================================
+
+
+You can download the binaries as follow:
+
+wget -N http://www.webalice.it/angelo.graziosi/macosx/cernlib/cernlib.sh
+
+wget -N http://www.webalice.it/angelo.graziosi/macosx/cernlib/cernlib.tar.xz
+wget -N http://www.webalice.it/angelo.graziosi/macosx/cernlib/cernbin.tar.xz
+wget -N http://www.webalice.it/angelo.graziosi/macosx/cernlib/cerninc.tar.xz
+wget -N http://www.webalice.it/angelo.graziosi/macosx/cernlib/cernglib.tar.xz
+wget -N http://www.webalice.it/angelo.graziosi/macosx/cernlib/cerngeant.tar.xz
+wget -N http://www.webalice.it/angelo.graziosi/macosx/cernlib/cernmclibs.tar.xz
+
+
+(I have splitted a single tarball for disk quota reasons.)
+
+
+To install (as administrator or using 'sudo'):
+
+   mkdir -p /usr/local/cernlib
+
+   tar -xvof cernlib.tar.xz -C /usr/local/cernlib
+   tar -xvof cernbin.tar.xz -C /usr/local/cernlib
+   tar -xvof cerninc.tar.xz -C /usr/local/cernlib
+   tar -xvof cernglib.tar.xz -C /usr/local/cernlib
+   tar -xvof cerngeant.tar.xz -C /usr/local/cernlib
+   tar -xvof cernmclibs.tar.xz -C /usr/local/cernlib
+
+   chmod +x cernlib.sh
+
+   . ./cernlib.sh
+
+You can source this script also in .bashrc...
+
+The build has been done using MacPorts Tools like GCC-4.5.3,
+OpenMotif, gnutar etc...
+
+
+Using GAMMA functions with GNU Fortran
+--------------------------------------
+
+If one wants to use the Cernlib implementation of GAMMAs, one has to
+declare them EXTERNAL. This could be needed if the bug described here
+
+  http://sources.redhat.com/bugzilla/show_bug.cgi?id=5159
+
+is still alive...
+
+DISCLAIMER:
+
+   I TAKE NO RESPONSIBILITY FOR ANY LOSS OF DATA ARISING FROM THE
+   USE OF THIS SOFTWARE, HOWSOEVER CAUSED.
+
+   THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT
+   WILL BE USEFUL BUT WITHOUT ANY WARRANTY.  ALL WARRANTIES, EXPRESSED OR
+   IMPLIED ARE HEREBY DISCLAIMED.
+
+   THIS INCLUDES BUT IS NOT LIMITED TO WARRANTIES OF MERCHANTABILITY OR
+   FITNESS FOR A PARTICULAR PURPOSE.
+

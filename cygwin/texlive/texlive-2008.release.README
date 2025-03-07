@@ -1,0 +1,54 @@
+The build of TeXLive-2008.release with GCC-3.4.4-3 and Cygwin-1.5.25-15
+=======================================================================
+
+
+You can download the binaries as follow:
+
+wget -N http://www.webalice.it/angelo.graziosi/cygwin/texlive/texlive-2008.release.tar.lzma
+
+
+At the moment, the procedure to install TeXLive-2008 on Cygwin is as the
+following:
+
+  0. EXCLUDE EVERY OTHER TEX SYSTEM (MiKTeX, teTeX) eventually installed!
+
+  1. mkdir -p /usr/local/texlive/2008
+
+  2. tar -C /usr/local/texlive/2008 --lzma -xvf texlive-2008.release.tar.lzma
+
+  3. wget -N ftp://tug.org/texlive/Images/texlive2008-20080822.iso.lzma
+
+  4. You have to unpack (for example, with 7-zip, http://www.7-zip.org/)
+     texlive2008-20080822.iso.lzma on HD, for example in /tmp/texlive.
+
+  5. cp /usr/local/texlive/2008/tlpkg/installer/lzma/lzma*.i386-cygwin* /tmp/texlive/tlpkg/installer/lzma
+
+  6. Now you must install the TeXLive packages with the bash script:
+
+        /tmp/texlive/install-tl
+
+     DO NOT CHOOSE ANY BINARIES, you have done this at step 2!
+     Simply accept the default typing 'i'.
+
+  7. Set the PATH so that the new binaries are found, for example:
+
+        export PATH=/usr/local/texlive/2008/bin/i386-cygwin:$PATH
+
+
+The binaries have been built with the option '--without-graphite'.
+
+
+
+
+DISCLAIMER:
+
+   I TAKE NO RESPONSIBILITY FOR ANY LOSS OF DATA ARISING FROM THE
+   USE OF THIS SOFTWARE, HOWSOEVER CAUSED.
+
+   THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT
+   WILL BE USEFUL BUT WITHOUT ANY WARRANTY.  ALL WARRANTIES, EXPRESSED OR
+   IMPLIED ARE HEREBY DISCLAIMED.
+
+   THIS INCLUDES BUT IS NOT LIMITED TO WARRANTIES OF MERCHANTABILITY OR
+   FITNESS FOR A PARTICULAR PURPOSE.
+
